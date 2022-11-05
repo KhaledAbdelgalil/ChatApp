@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Database schema for apps
 class CreateApps < ActiveRecord::Migration[7.0]
   def change
     create_table :apps do |t|

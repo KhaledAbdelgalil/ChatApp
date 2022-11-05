@@ -1,13 +1,13 @@
-require 'elasticsearch/model'
-class Message < ApplicationRecord
-  
+# frozen_string_literal: true
 
+require 'elasticsearch/model'
+
+# Message : message model to interact with message table
+class Message < ApplicationRecord
   belongs_to :chat, foreign_key: 'chat_id', primary_key: 'id'
 
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
-
- 
 
   Message.__elasticsearch__.create_index!
   Message.import
@@ -18,7 +18,7 @@ class Message < ApplicationRecord
         size: 20,
         query: {
           query_string: {
-            query: "*"+query.to_s+"*",
+            query: "*#{query}*",
             fields: ['content']
           }
         }
@@ -26,4 +26,3 @@ class Message < ApplicationRecord
     )
   end
 end
-
