@@ -1,24 +1,11 @@
-# README
+The callenge is chat system that has multiple Application identified by token, each Application has many chats identified by a number ( number should start from 1) , each Chat has many messages identified by a number ( number should start from 1)
+- The endpoints should be RESTful
+- Use MySQL2 as datastore
+- Use ElasticSearch for searching through messages of a specific chat
+- Use Sidekiq to run background jobs
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# My Approach
+### Understand the requirements
+- Extract classes (Application, Chat, Message)
+- Define Relations between classes
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
